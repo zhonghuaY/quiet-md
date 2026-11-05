@@ -20,7 +20,7 @@ jobs:
         run: |
           test "$(uname -m)" = x86_64
           cargo build --release --locked
-          lipo -verify_arch x86_64 target/release/quiet_md
+          lipo target/release/quiet_md -verify_arch x86_64
       - name: Assemble and verify application
         run: |
           set -euo pipefail
